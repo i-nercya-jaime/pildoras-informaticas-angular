@@ -1,32 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Empleado } from './empleado.model'
 import { ServicioEmpleadosService } from './servicio-empleados.service';
+import { EmpleadosService } from './empleados.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   titulo = 'Listado de empleados';
 
-  constructor(private miServicio: ServicioEmpleadosService){  }
+  constructor(private miServicio: ServicioEmpleadosService, private empleadosService: EmpleadosService){
 
-  empleados: Empleado[] = [
+    //this.empleados = this.empleadosService.empleados;
 
-    new Empleado("Jaime", "Díez", "Junior Developer", 1000),
-    new Empleado("Laura", "Álvarez", "Presidente", 2700),
-    new Empleado("Peter", "Alonso", "Senior Developer", 2500),
-    new Empleado("Alonso", "Martinez", "Mid Developer", 1700),
+  }
 
-  ];
+  ngOnInit(): void {
+    this.empleados = this.empleadosService.empleados;
+  }
+
+  empleados: Empleado[] = [];
 
   agregarEmpleado(){
-
     let miEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
-    this.miServicio.muestraMensaje("Nombre del empleado: " + miEmpleado.nombre);
-    this.empleados.push(miEmpleado);
-    
+    this.miServicio.muestraMensaje("Nombre del empleado: " + miEmpleado.nombre);  
+    this.empleadosService.agregarEmpleadoServicio(miEmpleado);
   }
 
   cuadroNombre: string = "";
