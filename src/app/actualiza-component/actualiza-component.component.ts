@@ -65,9 +65,6 @@ export class ActualizaComponentComponent {
       this.empleadosService.eliminarEmpleado(this.indice);
       this.router.navigate(['']);
     }
-
-    
-
     
   }
 

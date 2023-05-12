@@ -12,6 +12,8 @@ import { QuienesComponentComponent } from './quienes-component/quienes-component
 import { ContactoComponentComponent } from './contacto-component/contacto-component.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ActualizaComponentComponent } from './actualiza-component/actualiza-component.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
 
@@ -20,6 +22,7 @@ const appRoutes: Routes = [
   { path: 'quienes', component: QuienesComponentComponent },
   { path: 'contacto', component: ContactoComponentComponent },
   { path: 'actualiza/:id', component: ActualizaComponentComponent},
+  { path: '**', component: PagenotfoundComponent },
 
 ];
 
@@ -38,6 +41,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule,
   ],
   providers: [
     ServicioEmpleadosService,
