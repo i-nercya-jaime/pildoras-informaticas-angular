@@ -37,10 +37,14 @@ export class ActualizaComponentComponent {
     this.router.navigate([""])
   }
 
-
   actualizaEmpleado(){
     let miEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
     this.empleadosService.actualizarEmpleado(this.indice, miEmpleado);
+    this.router.navigate(['']);
+  }
+
+  eliminaEmpleado(){
+    this.empleadosService.eliminarEmpleado(this.indice);
     this.router.navigate(['']);
   }
 
