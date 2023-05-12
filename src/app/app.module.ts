@@ -14,6 +14,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { ActualizaComponentComponent } from './actualiza-component/actualiza-component.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 
 const appRoutes: Routes = [
 
@@ -35,13 +38,16 @@ const appRoutes: Routes = [
     ProyectosComponentComponent,
     QuienesComponentComponent,
     ContactoComponentComponent,
-    ActualizaComponentComponent
+    ActualizaComponentComponent,
+    PagenotfoundComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
+    MatCardModule,
+    MatProgressBarModule,
   ],
   providers: [
     ServicioEmpleadosService,
