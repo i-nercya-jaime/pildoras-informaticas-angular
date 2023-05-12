@@ -24,4 +24,8 @@ export class EmpleadosService{
         this.empleados.push(empleado);
     }
 
+    encontrarEmpleado(){
+
+        
+    }
 }

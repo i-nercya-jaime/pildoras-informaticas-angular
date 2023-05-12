@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Empleado } from '../empleado.model'
 import { ServicioEmpleadosService } from '../servicio-empleados.service';
 import { EmpleadosService } from '../empleados.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { EmpleadosService } from '../empleados.service';
 export class HomeComponentComponent {
   titulo = 'Listado de empleados';
 
-  constructor(private miServicio: ServicioEmpleadosService, private empleadosService: EmpleadosService){
+  constructor(private miServicio: ServicioEmpleadosService, private empleadosService: EmpleadosService, private router: Router){
 
     //this.empleados = this.empleadosService.empleados;
   }
